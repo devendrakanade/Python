@@ -1,0 +1,41 @@
+Python program to reverse a string:
+
+
+# Method 1: Using slicing
+
+def reverse_string(s):
+    return s[::-1]
+
+# Method 2: Using a loop
+
+def reverse_string_loop(s):
+    reversed_str = ""
+    for char in s:
+        reversed_str = char + reversed_str
+    return reversed_str
+
+# Method 3: Using the built-in reversed() function
+
+def reverse_string_builtin(s):
+    return ''.join(reversed(s))
+
+# Input string
+string = input("Enter a string: ")
+
+# Output reversed strings
+print("Reversed string (slicing):", reverse_string(string))
+
+print("Reversed string (loop):", reverse_string_loop(string))
+
+print("Reversed string (built-in):", reverse_string_builtin(string))
+
+
+Output:
+
+Enter a string: Hello
+
+Reversed string (slicing): olleH
+
+Reversed string (loop): olleH
+
+Reversed string (built-in): olleH
