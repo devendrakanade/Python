@@ -1,0 +1,38 @@
+Python program to find the longest common prefix among a set of strings such as ["flower", "flow", "flight"]:  
+
+def longest_common_prefix(strs):
+    if not strs:
+        return ""
+    
+    # Sort the strings to minimize comparisons
+    strs.sort()
+    
+    # Compare the first and last strings (smallest and largest lexicographically)
+    first = strs[0]
+    last = strs[-1]
+    common_prefix = ""
+    
+    for i in range(min(len(first), len(last))):
+        if first[i] == last[i]:
+            common_prefix += first[i]
+        else:
+            break
+    
+    return common_prefix
+
+# Input array of strings
+strings = ["flower", "flow", "flight"]
+
+# Find the longest common prefix
+result = longest_common_prefix(strings)
+print("Longest Common Prefix:", result)
+
+
+Explanation:
+1. Sort the array lexicographically so the first and last strings are the most different.
+2. Compare characters of the first and last strings until a mismatch occurs.
+3. Return the accumulated prefix.
+
+Output:
+
+Longest Common Prefix: fl
